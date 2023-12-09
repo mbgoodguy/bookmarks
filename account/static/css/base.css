@@ -275,3 +275,16 @@ img.user-detail {
     font-style:italic;
     color:#ccc;
 }
+
+.alert-success {
+    padding: 10px;
+    color: white;
+    background-color: #42e3f5 !important;  /* Добавьте !important, чтобы переопределить другие стили */
+    border: 1px solid #004085;  /* Если нужна граница вокруг блока */
+}
+
+
+.info-msg {
+    padding: 10px;
+    background: blue;
+}

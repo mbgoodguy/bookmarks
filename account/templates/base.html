@@ -4,9 +4,11 @@
 <head>
     <title>{% block title %}{% endblock %}</title>
     <link href="{% static "css/base.css" %}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="{% static 'js/close_messages.js' %}"></script>
 </head>
 <body>
-<div id="header">
+    <div id="header">
     <span class="logo"><a href="{% url 'login' %}">Bookmarks</a></span>
 {% if request.user.is_authenticated %}
     <ul class="menu">
@@ -29,9 +31,10 @@
         {% endif %}
     </span>
 </div>
-<div id="content">
-    {% block content %}
-    {% endblock %}
-</div>
+    {% include 'includes/messages.html' %}
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
 </body>
 </html>
