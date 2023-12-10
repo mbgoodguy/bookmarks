@@ -40,7 +40,6 @@ INSTALLED_APPS = [
 
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
-LOGOUT_URL = 'login'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -53,7 +52,6 @@ MIDDLEWARE = [
 ]
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
-
 
 ROOT_URLCONF = 'bookmarks.urls'
 
@@ -125,6 +123,11 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+]
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'

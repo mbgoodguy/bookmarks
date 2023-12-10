@@ -24,8 +24,8 @@
     </ul>
 {% endif %}
     <span class="user">
-        {% if request.user.is_authenticated %} Hello {{ request.user.first_name|default:request.user.username }},
-            <a href="{% url 'logout' %}">Logout</a>
+        {% if request.user.is_authenticated %}
+            Hello {{ request.user.first_name|default:request.user.username }}
         {% else %}
             <a href="{% url 'login' %}">Log-in</a>
         {% endif %}
