@@ -25,6 +25,7 @@ SECRET_KEY = 'django-insecure-o29k7w#7l(qi7!ijq_+!(&4+s&ikj#)ch)e#(2r*3!%+(e$aqu
 DEBUG = True
 if DEBUG:
     import mimetypes
+
     mimetypes.add_type('application/javascript', '.js', True)
     mimetypes.add_type('text/css', '.css', True)
 
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'django_extensions',
 
     'social_django',
+    'easy_thumbnails',
 
     'images',
 ]
@@ -143,8 +145,8 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # Google Auth
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '596646616591-e1mkp00euq7703k360qiadm4h97d2a6t.apps.googleusercontent.com' # ИД клиента Google
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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' # Секрет клиента Google
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '596646616591-e1mkp00euq7703k360qiadm4h97d2a6t.apps.googleusercontent.com'  # ИД клиента Google
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'  # Секрет клиента Google
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 SOCIAL_AUTH_PIPELINE = [
     'social_core.pipeline.social_auth.social_details',
@@ -158,6 +160,3 @@ SOCIAL_AUTH_PIPELINE = [
     'social_core.pipeline.user.user_details',
     'account.authentication.create_profile',
 ]
-
-
-
