@@ -8,6 +8,7 @@ urlpatterns = [
     # path('login/', views.user_login, name='login'),
     # url-адреса входа и выхода
     path('login/', auth_views.LoginView.as_view(), name='login'),
+    path('logout/', views.logout_user, name='account_logout'),
     # # url-адреса смены пароля
     # path('password-change/', auth_views.PasswordChangeView.as_view(), name='password_change'),
     # path('password-change/done/', auth_views.PasswordChangeDoneView.as_view(), name='password_change_done'),
